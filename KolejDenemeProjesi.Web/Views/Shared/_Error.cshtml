@@ -1,0 +1,11 @@
+﻿@model KolejDenemeProjesi.Web.ViewModels.ErrorViewModel
+
+<div class="note note-danger">
+    <h4 class="block">@Model.Header!</h4>
+    <ul>
+        @foreach (var item in Model.Items)
+        {
+            <li>@item.Message (Hata Kodu : @item.Code)</li>
+        }
+    </ul>
+</div>

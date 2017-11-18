@@ -1,0 +1,11 @@
+﻿@model KolejDenemeProjesi.Web.ViewModels.WarningViewModel
+
+<div class="note note-warning">
+    <h4 class="block">@Model.Header!</h4>
+    <ul>
+        @foreach (var item in Model.Items)
+        {
+            <li>@item</li>
+        }
+    </ul>
+</div>

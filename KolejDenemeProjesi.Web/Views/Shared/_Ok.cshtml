@@ -1,0 +1,10 @@
+﻿@model KolejDenemeProjesi.Web.ViewModels.OkViewModel
+
+<div class="note note-success">
+    <h4 class="block">@Model.Header!</h4>
+    @foreach (var item in Model.Items)
+    {
+      <p>@item</p>
+    }
+</div>
+

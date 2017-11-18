@@ -1,0 +1,92 @@
+﻿@model List<KolejDenemeProjesi.Entities.Donemler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-globe"></i>Dönemler
+                </div>
+                <div class="actions">
+                    <a href="~/Admin/Donem/Create" class="btn btn-default btn-sm btn-circle" id="">
+                        <i class="fa fa-plus"></i> Yeni Dönem Tanımla
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-striped table-bordered table-advance table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <i class="fa fa-calendar"></i> Takvimler
+                                </th>
+                                <th>
+                                    <i class="fa fa-home"></i>Dönem Kodu
+                                </th>
+                                <th class="hidden-xs">
+                                    <i class="fa fa-comment"></i> Açıklama
+                                </th>
+                                <th>
+                                    <i class="fa fa-calendar-check-o"></i>  Başlangıç/Bitiş Tarihi(Yıl)
+                                </th>
+                                
+                                <th>
+                                    <i class="fa fa-key"></i> İşlemler
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="highlight">
+                                        <div class="success"></div>
+                                        <a href="~/Admin/Takvimler/Index/@item.Id" class="btn btn-outline btn-circle dark btn-sm yellow">
+                                            <i class="fa fa-calendar-o"></i> Takvimler(@item.Takvimler.Count)
+                                        </a>
+                                    </td>
+                                    <td>
+                                        @item.DonemKodu
+                                    </td>
+                                    <td class="hidden-xs"> @item.Aciklama </td>
+                                 
+                                    <td>
+                                        @item.BaslangicTarihi.Year - @item.BitisTarihi.Year
+                                    </td>
+                                    <td>
+                                        <a href="~/Admin/Donem/Edit/@item.Id" class="btn btn-outline btn-circle btn-sm purple">
+                                            <i class="fa fa-edit"></i> Düzenle
+                                        </a>
+                                        <a href="~/Admin/Donem/Delete/@item.Id" class="btn btn-outline btn-circle dark btn-sm red">
+                                            <i class="fa fa-trash-o"></i> Sil
+                                        </a>
+                                        <a href="~/Admin/Donem/Details/@item.Id" class="btn btn-outline btn-circle dark btn-sm blue">
+                                            <i class="fa fa-search"></i> Detaylar
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+
+
+@section scripts
+    {
+    
+    }
+@section islemler
+    {
+     
+    }

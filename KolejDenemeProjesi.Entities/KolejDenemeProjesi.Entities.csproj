@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27351A02-1237-43D5-BB89-5CA9E570E9E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KolejDenemeProjesi.Entities</RootNamespace>
+    <AssemblyName>KolejDenemeProjesi.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Burslar.cs" />
+    <Compile Include="BursTipleri.cs" />
+    <Compile Include="Dersler.cs" />
+    <Compile Include="DersProgramiDersleri.cs" />
+    <Compile Include="DersProgramiDersOgretmenleri.cs" />
+    <Compile Include="DersProgramlari.cs" />
+    <Compile Include="DonemGunBilgileri.cs" />
+    <Compile Include="Donemler.cs" />
+    <Compile Include="DonemTakvimi.cs" />
+    <Compile Include="GunTipleri.cs" />
+    <Compile Include="Kullanicilar.cs" />
+    <Compile Include="KullaniciTipleri.cs" />
+    <Compile Include="Messages\ErrorMessageObj.cs" />
+    <Compile Include="Messages\ErrorMessages.cs" />
+    <Compile Include="MyEntityBase.cs" />
+    <Compile Include="Ogrenciler.cs" />
+    <Compile Include="OgrenciTipDonem.cs" />
+    <Compile Include="OgrenciVelileri.cs" />
+    <Compile Include="OgrenimTipleri.cs" />
+    <Compile Include="Ogretmenler.cs" />
+    <Compile Include="OkulBilgileri.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SinifSeviyeleri.cs" />
+    <Compile Include="Subeler.cs" />
+    <Compile Include="Veliler.cs" />
+    <Compile Include="VeliYakinlikDereceleri.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
