@@ -5,32 +5,72 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Create</h2>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Subeler</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.SubeAdi, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SubeAdi, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SubeAdi, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+
+<div class="portlet light portlet-fit portlet-form bordered">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="icon-settings font-dark"></i>
+            <span class="caption-subject font-dark sbold uppercase">Yeni Dönem Tanımlama Formu</span>
         </div>
     </div>
-}
+    <div class="portlet-body">
+        @using (Html.BeginForm("Create", "Subeler", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="control-label col-md-3">
+                        Şube Adı
+                        <span class="required" aria-required="true">*</span>
+                    </label>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(c => c.SubeAdi, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3">
+                         Öğrenim Tipi
+                        <span class="required" aria-required="true">*</span>
+                    </label>
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(c=>c.OgrenimTip.Id,(SelectList)ViewBag.OgrenimTipleri as SelectList,new { @class="form-control",@id="OgrenimTips"})
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="control-label col-md-3">
+                        Sınıf Seviyesi
+                        <span class="required" aria-required="true">*</span>
+                    </label>
+                    <div class="col-md-4" id="sinifseviyeleri">
+                        
+                    </div>
+                </div>   
+              
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn green">Kaydet</button>
+                        <a href="~/Admin/Subeler" class="btn warning">Vazgeç</a>
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- END FORM-->
+    </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section scripts {
+    
+<script>
+    $("#OgrenimTips").change(function () {
+        var ogrenimtipid = $(this).val();
+        $("#sinifseviyeleri").load("/Admin/Subeler/GetSeviyeList/" + ogrenimtipid);
+    });
+    </script>
+
+
+
+}

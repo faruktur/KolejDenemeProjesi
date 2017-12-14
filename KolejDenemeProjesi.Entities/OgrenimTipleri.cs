@@ -9,7 +9,6 @@ namespace KolejDenemeProjesi.Entities
     public class OgrenimTipleri:MyEntityBase
     {
         public string OgrenimTip { get; set; }
-
         public virtual List<SinifSeviyeleri> SinifSeviyeleri { get; set; }
 
         public OgrenimTipleri()

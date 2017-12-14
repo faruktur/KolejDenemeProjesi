@@ -10,7 +10,8 @@ namespace KolejDenemeProjesi.Entities
     {
         public string Username { get; set; }
         public string Sifre { get; set; }
-        
+        public string Email { get; set; }
+
         public virtual KullaniciTipleri KullaniciTip { get; set; }
     }
 }

@@ -24,10 +24,19 @@ namespace KolejDenemeProjesi.DataAccessLayer.EntityFramework
         public DbSet<Kullanicilar> Kullanicilar { get; set; }
         public DbSet<KullaniciTipleri> KullaniciTipleri { get; set; }
         public DbSet<Ogrenciler> Ogrenciler { get; set; }
-        public DbSet<OgrenciTipDonem> OgrenciTipDonem { get; set; }
+        public DbSet<OgrenciKayitlari> OgrenciKayitlari { get; set; }
         public DbSet<OgrenciVelileri> OgrenciVelileri { get; set; }
         public DbSet<Veliler> Veliler { get; set; }
         public DbSet<VeliYakinlikDereceleri> VeliYakinlikDereceleri { get; set; }
+
+        public DbSet<Branslar> a { get; set; }
+        public DbSet<Devamsizlik> Devamsizlik { get; set; }
+        public DbSet<OgretmenKayitlari> OgretmenKayitlari { get; set; }
+        public DbSet<OgretmenUnvanlari> OgretmenUnvanlari { get; set; }
+        public DbSet<PersonelKayitlari> PersonelKayitlari { get; set; }
+        public DbSet<PersonelTipleri> PersonelTipleri { get; set; }
+        public DbSet<Kisiler> Kisiler { get; set; }
+
 
 
         public DatabaseContext()

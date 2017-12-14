@@ -147,6 +147,7 @@
     <Compile Include="Areas\Personel\PersonelAreaRegistration.cs" />
     <Compile Include="Areas\Veli\VeliAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustomHelpers\CustomHelpers.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5879,8 +5880,6 @@
     <Content Include="assets\pages\media\blog\Thumbs.db" />
     <Content Include="assets\pages\media\pages\Thumbs.db" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Ogrenci\Kayit.cshtml" />
-    <Content Include="Areas\Admin\Views\Ogrenci\Liste.cshtml" />
     <Content Include="Areas\Admin\Views\OgrenimTipleri\Create.cshtml" />
     <Content Include="Areas\Admin\Views\OgrenimTipleri\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\OgrenimTipleri\Details.cshtml" />
@@ -5926,6 +5925,11 @@
     <Content Include="Areas\Admin\Views\Subeler\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Subeler\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Subeler\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Subeler\_SinifSeviyeleri.cshtml" />
+    <Content Include="Areas\Admin\Views\Subeler\_İşlemlerList.cshtml" />
+    <Content Include="Areas\Admin\Views\Ogrenci\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Ogrenci\Create.cshtml" />
+    <Content Include="App_Code\FormElamanlari.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

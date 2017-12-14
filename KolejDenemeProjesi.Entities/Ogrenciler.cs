@@ -9,25 +9,18 @@ namespace KolejDenemeProjesi.Entities
 {
     public class Ogrenciler:MyEntityBase
     {
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string TC_No{ get; set; }
-        public string OkulNo { get; set; }
-        public string Email { get; set; }
-        public DateTime DogumTarihi{ get; set; }
-        [ScaffoldColumn(false)]
-        public bool isActive { get; set; }
-        
 
-        public virtual Kullanicilar KullaniciGiris{get;set;}
+
+
+
+        public virtual Kisiler KisiselBilgiler { get; set; }
         public virtual List<Burslar> Burslar {get;set;}
-        public virtual List<OgrenciTipDonem> Donemler { get; set; }
+        public List<OgrenciKayitlari> DonemKayitlari { get; set; }
         public virtual List<OgrenciVelileri> Veliler { get; set; }
 
         public Ogrenciler()
         {
             Burslar = new List<Entities.Burslar>();
-            Donemler = new List<OgrenciTipDonem>();
             Veliler = new List<Entities.OgrenciVelileri>();
         }
 

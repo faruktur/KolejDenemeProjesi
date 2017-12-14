@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace KolejDenemeProjesi.Entities
 {
-    public class BursTipleri:MyEntityBase
+    public class Branslar :MyEntityBase
     {
-        public string BursTipi { get; set; }
-        public virtual List<Burslar> Burslar {get;set;}
+        public string BransAdi { get; set; }
+
+
+        public List<Ogretmenler> Ogretmenler { get; set; }
     }
 }

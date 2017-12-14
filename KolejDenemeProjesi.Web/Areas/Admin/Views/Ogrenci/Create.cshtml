@@ -1,0 +1,239 @@
+﻿@model KolejDenemeProjesi.Entities.Ogrenciler
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Öğrenci Kayıt Formu
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+            <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
+            <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        
+        <div class="tabbable-custom nav-justified">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active">
+                    <a href="#tab_1_1_1" data-toggle="tab" aria-expanded="true"> Kişisel Bilgiler </a>
+                </li>
+                <li class="">
+                    <a href="#tab_1_1_2" data-toggle="tab" aria-expanded="false"> Okul Kayıt Bilgileri </a>
+                </li>
+                <li class="">
+                    <a href="#tab_1_1_3" data-toggle="tab" aria-expanded="false">
+                        Veli Bilgileri 
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#tab_1_1_3" data-toggle="tab" aria-expanded="false">
+                        Kayıt Tamamlama
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1_1_1">
+                    <div  class="horizontal-form">
+                        <div class="form-body">
+                            <h3 class="form-section">Kişisel Bilgiler</h3>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">TC Kimlik Numarası</label>
+                                        <input type="text" id="ogrenci" class="form-control" placeholder="12345678910">
+                                        <span class="help-block"> This is inline help </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">TC Kimlik Numarası</label>
+                                        <input type="text" id="ogrenci" class="form-control" placeholder="12345678910">
+                                        <span class="help-block"> This is inline help </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Cinsiyet</label>
+                                        <select class="form-control">
+                                            <option value="Erkek">Erkek</option>
+                                            <option value="Kadın">Kadın</option>
+                                        </select>
+                                        <span class="help-block"> Bir Cinsiyet seçiniz... </span>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group has-error">
+                                        <label class="control-label">E-Posta</label>
+                                        <input type="text" id="lastName" class="form-control" placeholder="Lim">
+                                        <span class="help-block"> This field has error. </span>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Cep Telefonu</label>
+                                        <input type="text" id="firstName" class="form-control" placeholder="0555 55 55">
+                                        <span class="help-block"> This is inline help </span>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group has-error">
+                                        <label class="control-label">2.Cep Telefonu</label>
+                                        <input type="text" id="lastName" class="form-control" placeholder="Lim">
+                                        <span class="help-block"> This field has error. </span>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>                <!--/row-->
+
+                            <h3 class="form-section">Adres Bilgileri</h3>
+                            <div class="row">
+                                <div class="col-md-12 ">
+                                    <div class="form-group">
+                                        <label>Ek Adres Bilgisi</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Şehir</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>İlçe</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <!--/row-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Semt/Mahalle</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Sokak</label>
+                                        <select class="form-control"> </select>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <h3 class="form-section">Öğrenci Kayıt Bilgileri</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Öğrenim Tipi</label>
+                                        <input type="text" id="firstName" class="form-control" placeholder="Faruk">
+                                        <span class="help-block"> This is inline help </span>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Sinif Seviyesi</label>
+                                        <input type="text" id="lastName" class="form-control" placeholder="Tur">
+                                        <span class="help-block"> This field has error. </span>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Şube</label>
+                                        <input type="text" id="firstName" class="form-control" placeholder="Faruk">
+                                        <span class="help-block"> This is inline help </span>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Okul Numarası</label>
+                                        <input type="text" id="firstName" class="form-control" placeholder="Faruk">
+                                        <span class="help-block"> This is inline help </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-actions right">
+                            <a onclick="EminMisiniz()" class="btn default">Vazgeç</a>
+                            <button type="submit" class="btn blue">
+                                <i class="fa fa-check"></i> Kaydı Tamamla
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_1_1_2">
+                    <p> Howdy, I'm in Section 2. </p>
+                    <p>
+                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+                        consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.
+                    </p>
+                    <p>
+                        <a class="btn green" href="ui_tabs_accordions_navs.html#tab_1_1_2" target="_blank"> Activate this tab via URL </a>
+                    </p>
+                </div>
+                <div class="tab-pane" id="tab_1_1_3">
+                    <p> Howdy, I'm in Section 3. </p>
+                    <p>
+                        Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+                        iriure dolor in hendrerit in vulputate velit esse molestie consequat
+                    </p>
+                    <p>
+                        <a class="btn yellow" href="ui_tabs_accordions_navs.html#tab_1_1_3" target="_blank"> Activate this tab via URL </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+     
+       
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_6_1">
+                    
+                </div>
+             
+            </div>
+       
+        
+        <!-- END FORM-->
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        function EminMisiniz()
+        {
+            //if(window.prompt())
+        }
+    </script>
+}

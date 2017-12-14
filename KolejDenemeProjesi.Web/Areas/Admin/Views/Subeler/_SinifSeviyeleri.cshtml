@@ -1,0 +1,7 @@
+﻿@model List<KolejDenemeProjesi.Entities.SinifSeviyeleri>
+@{
+    ViewBag.Title = "_SinifSeviyeleri";
+    Layout = null;
+}
+
+@Html.DropDownList("Seviye.Id",new SelectList(Model as List<KolejDenemeProjesi.Entities.SinifSeviyeleri>,"Id","Seviye"),new { @class="form-control",@id="sinifseviye_ddl"})

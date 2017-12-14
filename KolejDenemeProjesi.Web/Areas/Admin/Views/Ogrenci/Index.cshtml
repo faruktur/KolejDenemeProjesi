@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KolejDenemeProjesi.Entities.Subeler>
+﻿@model IEnumerable<KolejDenemeProjesi.Entities.Ogrenciler>
 
 @{
     ViewBag.Title = "Index";
@@ -10,11 +10,14 @@
         <div class="portlet box blue">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-globe"></i>Şubeler
+                    <i class="fa fa-globe"></i>Öğrenciler 
                 </div>
                 <div class="actions">
+                    <a href="~/Admin/Ogrenci/Create" class="btn btn-default btn-sm btn-circle" id="">
+                        <i class="fa fa-plus"></i> Yeni Öğrenci Kaydı
+                    </a>
                     <a href="~/Admin/Subeler/Create" class="btn btn-default btn-sm btn-circle" id="">
-                        <i class="fa fa-plus"></i> Yeni Şube Tanımla
+                        <i class="fa fa-anchor"></i> İşlemler
                     </a>
                 </div>
             </div>
@@ -24,16 +27,16 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <i class="fa fa-calendar"></i> Şube(Seviye/Grup)
+                                    <i class="fa fa-calendar"></i> Ad Soyad
                                 </th>
                                 <th>
                                     <i class="fa fa-home"></i>Öğrenim Tipi
                                 </th>
                                 <th class="hidden-xs">
-                                    <i class="fa fa-user"></i> Öğrenci Sayısı/Mevcudiyet Sınırı
+                                    <i class="fa fa-user"></i> Şube
                                 </th>
                                 <th>
-                                    <i class="fa fa-calendar-check-o"></i>  Ders Sayısı
+                                    <i class="fa fa-calendar-check-o"></i>  Aktiflik
                                 </th>
 
                                 <th>
@@ -48,28 +51,41 @@
                                     <td class="highlight">
                                         <div class="success"></div>
                                         <span>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;@item.Seviye.Seviye / @item.SubeAdi
+                                            &nbsp;&nbsp;&nbsp;&nbsp;@item  @item
                                         </span>
                                     </td>
                                     <td>
-                                        @item.OgrenimTip.OgrenimTip
+                                        @item.Donemler.FirstOrDefault().OgrenimTipi (Düzeltilecek)
                                     </td>
-                                    <td class="hidden-xs"> @item.Ogrenciler.Count / 30(alan eklenecek) </td>
+                                    <td class="hidden-xs">@item.Donemler.FirstOrDefault().Sube.Seviye.Seviye /
+                                     @item.Donemler.FirstOrDefault().Sube.SubeAdi / 30(alan eklenecek) </td>
 
                                     <td>
-                                        9(alan eklenecek)
+                                        @if (item)
+                                        {
+                                            <div class="alert alert-success">
+                                                <strong>Aktif</strong>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="alert alert-danger">
+                                            <strong>Aktif Değil</strong>
+                                        </div> 
+                                        }
+
                                     </td>
                                     <td>
-                                        <a href="~/Admin/Subeler/Edit/@item.Id" class="btn btn-outline btn-circle btn-sm purple">
+                                        <a href="~/Admin/Ogrenciler/Edit/@item.Id" class="btn btn-outline btn-circle btn-sm purple">
                                             <i class="fa fa-edit"></i> Düzenle
                                         </a>
-                                        <a href="~/Admin/Subeler/Delete/@item.Id" class="btn btn-outline btn-circle dark btn-sm red">
+                                        <a href="~/Admin/Ogrenciler/Delete/@item.Id" class="btn btn-outline btn-circle dark btn-sm red">
                                             <i class="fa fa-trash-o"></i> Sil
                                         </a>
-                                        <a href="~/Admin/Subeler/Details/@item.Id" class="btn btn-outline btn-circle dark btn-sm blue">
+                                        <a href="~/Admin/Ogrenciler/Details/@item.Id" class="btn btn-outline btn-circle dark btn-sm blue">
                                             <i class="fa fa-search"></i> Detaylar
                                         </a>
-                                        <a href="~/Admin/Subeler/Details/@item.Id" class="btn btn-outline btn-circle dark btn-sm blue">
+                                        <a href="~/Admin/Ogrenciler/Details/@item.Id" class="btn btn-outline btn-circle dark btn-sm blue">
                                             <i class="fa fa-tasks"></i> Diğer İşlemler(İşlemler listesi popup ile gelecek)
                                         </a>
                                     </td>

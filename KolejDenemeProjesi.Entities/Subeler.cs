@@ -10,9 +10,11 @@ namespace KolejDenemeProjesi.Entities
     public class Subeler:MyEntityBase
     {
         public string SubeAdi { get; set; }
+        public virtual OgrenimTipleri OgrenimTip { get; set; }
         public virtual SinifSeviyeleri Seviye { get; set; }
-        public virtual List<OgrenciTipDonem> Ogrenciler { get; set; }
-        public virtual SinifSeviyeleri SinifSeviyesi { get; set; }
-        public virtual DersProgramlari DersProgrami { get; set; }
+        public virtual List<OgrenciKayitlari> Ogrenciler { get; set; }
+         
+       
+      
     }
 }

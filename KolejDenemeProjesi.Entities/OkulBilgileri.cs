@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace KolejDenemeProjesi.Entities
 {
-    class OkulBilgileri
+    public class OkulBilgileri:MyEntityBase
     {
+        public string OkulAdi { get; set; }
+        public string WebAdresi { get; set; }
     }
 }

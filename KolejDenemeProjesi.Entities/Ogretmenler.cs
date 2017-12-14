@@ -8,8 +8,9 @@ namespace KolejDenemeProjesi.Entities
 {
     public class Ogretmenler:MyEntityBase
     {
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-
+        public virtual Branslar Brans { get; set; }
+        public virtual OgretmenUnvanlari Unvan { get; set; }
+        public virtual Kisiler KisiselBilgiler { get; set; }
+        public virtual List<OgretmenKayitlari> DonemKayitlari { get; set; }
     }
 }

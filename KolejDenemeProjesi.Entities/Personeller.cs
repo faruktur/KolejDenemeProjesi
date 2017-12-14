@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace KolejDenemeProjesi.Entities
 {
-    public class BursTipleri:MyEntityBase
+    public class Personeller:MyEntityBase
     {
-        public string BursTipi { get; set; }
-        public virtual List<Burslar> Burslar {get;set;}
+        public virtual Kisiler KisiselBilgiler { get; set; }
+        public virtual PersonelTipleri PersonelTipi { get; set; }
     }
 }

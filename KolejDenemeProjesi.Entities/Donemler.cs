@@ -13,6 +13,9 @@ namespace KolejDenemeProjesi.Entities
         public string DonemKodu { get; set; }
         public string Aciklama { get; set;}
         public virtual List<DonemTakvimi> Takvimler {get;set;}
-        public virtual List<OgrenciTipDonem> KayitliOgrenciler { get; set; }
+        public List<Devamsizlik> Devamsizliklar { get; set; }
+        public List<OgrenciKayitlari> OgrenciKayitlari { get; set; }
+        public List<OgretmenKayitlari> OgretmenKayitlari { get; set; }
+        public List<PersonelKayitlari> PersonelKayitlari { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace KolejDenemeProjesi.Web.Areas.Admin.Controllers
         private DonemManager DonemManager = new DonemManager();
         public ActionResult Index()
         {
-            var model = DonemManager.ListQueryable().Include(c => c.KayitliOgrenciler).Include(c => c.Takvimler).ToList();
+            var model = DonemManager.ListQueryable().Include(c => c.OgrenciKayitlari).Include(c => c.Takvimler).ToList();
 
             return View(model);
         }
@@ -119,7 +119,7 @@ namespace KolejDenemeProjesi.Web.Areas.Admin.Controllers
                 TempData["warningviewmodel"] = new WarningViewModel() { Header = "Parametre bozuk!", Items = { "Yapılan işlemi kontrol edip tekrar deneyiniz." } };
                 return RedirectToAction("Index");
             }
-            var model = DonemManager.ListQueryable().Include(c => c.KayitliOgrenciler).Include(c => c.Takvimler).FirstOrDefault(c=>c.Id==id.Value);
+            var model = DonemManager.ListQueryable().Include(c => c.OgrenciKayitlari).Include(c => c.Takvimler).FirstOrDefault(c=>c.Id==id.Value);
             if (model == null)
             {
                 TempData["warningviewmodel"] = new WarningViewModel() { Header = "Uyarı!", Title = "Aranılan bilgiye ulaşılamadı.", Items = { "Yapılan işlemi kontrol edip tekrar deneyiniz." } };
@@ -136,7 +136,7 @@ namespace KolejDenemeProjesi.Web.Areas.Admin.Controllers
                 TempData["warningviewmodel"] = new WarningViewModel() { Header = "Parametre bozuk!", Items = { "Yapılan işlemi kontrol edip tekrar deneyiniz." } };
                 return RedirectToAction("Index");
             }
-            var model = DonemManager.ListQueryable().Include(c => c.KayitliOgrenciler).Include(c => c.Takvimler).FirstOrDefault(c => c.Id == id.Value);
+            var model = DonemManager.ListQueryable().Include(c => c.OgrenciKayitlari).Include(c => c.Takvimler).FirstOrDefault(c => c.Id == id.Value);
             if (model == null)
             {
                 TempData["warningviewmodel"] = new WarningViewModel() { Header = "Uyarı!", Title = "Aranılan bilgiye ulaşılamadı.", Items = { "Yapılan işlemi kontrol edip tekrar deneyiniz." } };
